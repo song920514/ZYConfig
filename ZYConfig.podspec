@@ -1,16 +1,19 @@
 #
 # Be sure to run `pod lib lint ZYConfig.podspec' to ensure this is a
 # valid spec before submitting.
-#  https://cloud.tencent.com/developer/article/1336125 g生成教程
+#
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-
+# https://cloud.tencent.com/developer/article/1336125 生成教程
 #$ pod lib lint --allow-warnings
 #若还是提示什么 'echo "2.3" > .swift-version' 的,就加这么一个东西。
 #$ echo "2.3" > .swift-version 然后在进行验证,这是应该就可以了。若还是不行,回到配置文件中检查有没有写错配置信息~
-#给仓库打标签  pod trunk push ZYConfig.podspec  pod spec lint ZYConfig.podspec
+
+#给仓库打标签 git tag -m 'first release' '1.0.1'
+#推送tag到远端仓库 git push --tag
+#pod trunk push ZYConfig.podspec  pod spec lint ZYConfig.podspec --allow-warnings
 
 Pod::Spec.new do |s|
   s.name             = 'ZYConfig'

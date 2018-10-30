@@ -22,7 +22,7 @@ pod 'ZYConfig'
 
 ## Author
 
-song920514@163.com, song920514@163.com
+Ismail, song920514@163.com
 
 ## License
 

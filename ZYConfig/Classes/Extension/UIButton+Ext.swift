@@ -12,7 +12,7 @@ import UIKit
 
 extension UIButton{
     
-    class  func jcCustemMainbutton(_ title:String,tager:AnyObject,action:Selector) -> UIButton {
+    public class  func jcCustemRadiusbutton(_ title:String,tager:AnyObject,action:Selector) -> UIButton {
         
         let cutemBtn = UIButton(type: .custom)
         cutemBtn.setTitle(title, for: .normal)
@@ -28,7 +28,7 @@ extension UIButton{
         
     }
     
-    class func jcCustemButton(_ tilte:String,titleColor:UIColor,titleFont:Float ,backColor: UIColor,tager:AnyObject,action:Selector,isCorRadiusl:Bool) -> UIButton {
+   public class func jcCustemButton(_ tilte:String,titleColor:UIColor,titleFont:Float ,backColor: UIColor,tager:AnyObject,action:Selector,isCorRadiusl:Bool) -> UIButton {
         
         let cutemBtn = UIButton(type: .custom)
         cutemBtn.backgroundColor = backColor

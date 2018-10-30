@@ -18,7 +18,7 @@ enum  JCEmpyState{
     case NullDate
 }
 
-class JCEmptyView: UIView {
+public class JCEmptyView: UIView {
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -112,7 +112,7 @@ class JCEmptyView: UIView {
     
     }
     
-    func jcSetEmptyRefreshBtnTitle(_ title:String) -> Void {
+    open func jcSetEmptyRefreshBtnTitle(_ title:String) -> Void {
         jcActionBtn.setTitle(title, for: .normal)
         refreshBtnTitle = title
     }
@@ -123,7 +123,7 @@ class JCEmptyView: UIView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

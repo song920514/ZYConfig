@@ -12,12 +12,14 @@ import UIKit
 
 extension UILabel{
     
-    static func jcCustem(_ font:UIFont, textColor:UIColor, text:String)->UILabel{
-        
+   public static func jcCustem(_ font:UIFont, textColor:UIColor, text:String) ->UILabel{
         let jcLbl = UILabel()
         jcLbl.font = font
         jcLbl.textColor = textColor
         jcLbl.text = text
         return jcLbl
     }
+    
+    
+    
 }

@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "summary": "这是一个公有的swift 基类处理库.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/song920514@163.com/ZYConfig",
+  "homepage": "https://github.com/song920514/ZYConfig",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,11 @@
     "song920514@163.com": "song920514@163.com"
   },
   "source": {
-    "git": "https://github.com/song920514@163.com/ZYConfig.git",
+    "git": "https://github.com/song920514/ZYConfig.git",
     "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "ZYConfig/Classes/**/*",
   "dependencies": {

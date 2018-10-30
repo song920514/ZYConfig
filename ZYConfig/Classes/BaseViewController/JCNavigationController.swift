@@ -8,16 +8,16 @@
 
 import UIKit
 
-class JCNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+open class JCNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
     }
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
@@ -38,7 +38,7 @@ class JCNavigationController: UINavigationController, UIGestureRecognizerDelegat
      - parameter viewController: 即将压入栈的控制器
      - parameter animated:       是否动画
      */
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         let backIetm = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
         backIetm.tintColor = UIColor.white
@@ -52,22 +52,22 @@ class JCNavigationController: UINavigationController, UIGestureRecognizerDelegat
         super.pushViewController(viewController, animated: animated)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override open var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.lightContent
     }
     
     
     //    MARK: 屏幕的旋转处理
     //是否自动旋转,返回true可以自动旋转
-    override var shouldAutorotate: Bool{
+    override open var shouldAutorotate: Bool{
         return self.viewControllers.last!.shouldAutorotate
     }
     //返回支持的方向
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return self.viewControllers.last!.supportedInterfaceOrientations
     }
     //由模态推出的视图控制器 优先支持的屏幕方向
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
         return self.viewControllers.last!.preferredInterfaceOrientationForPresentation
     }
     

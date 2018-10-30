@@ -10,13 +10,14 @@ import Foundation
 import Moya
 import SwiftyJSON
 import Alamofire
+import enum Result.Result
+
 
 /// 网络请求完成后的回调
 public typealias JCRequstSuccessCompletion = (_ jsonData:JSON?) -> ()
-
 public typealias JCRequstFailureCompletion = (_ code: Int, _ message: String) -> ()
 
-class NetworkService {
+open class NetworkService {
     /// 显示loading的插件
     fileprivate static let requestLoadingPlugin = RequestLoadingPlugin()
     /// 用于获取日志显示的时间
@@ -196,3 +197,29 @@ class NetworkService {
         #endif
     }
 }
+
+open class RequestLoadingPlugin: PluginType {
+    
+    public var isShowLoading: Bool = false
+    public init(isShowLoading: Bool = false) {
+        self.isShowLoading = isShowLoading
+    }
+    
+    //开始发起请求
+    public func willSend(_ request: RequestType, target: TargetType) {
+        //显示loading
+        if isShowLoading {
+//            HUD.show(HUDContentType.progress)
+        }
+    }
+    
+    //收到请求
+    public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
+        //隐藏loading
+        if isShowLoading {
+//            HUD.hide()
+        }
+    }
+    
+}
+

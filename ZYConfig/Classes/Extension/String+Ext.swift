@@ -13,7 +13,7 @@ import CommonCrypto // MD5 用到
 extension String {
     
     /// 计算字符串宽度
-    func jcWidthForComment(fontSize: CGFloat, height: CGFloat = 15) -> CGFloat {
+    public func jcWidthForComment(fontSize: CGFloat, height: CGFloat = 15) -> CGFloat {
         
         let font = UIFont.systemFont(ofSize: fontSize)
         let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
@@ -21,42 +21,36 @@ extension String {
     }
     
     /// 计算字符串宽度
-    func jcWidthForComment2(fontSize: CGFloat) -> CGFloat{
+    public func jcWidthForComment2(fontSize: CGFloat) -> CGFloat{
         
         let font = UIFont.systemFont(ofSize: fontSize)
         let rect1 = NSString.init(string: self).size(withAttributes: [NSAttributedString.Key.font: font])
         return ceil(rect1.width)
     }
     /// 计算字符串高度
-    func jcHeightForComment(fontSize: CGFloat, width: CGFloat) -> CGFloat {
+    public func jcHeightForComment(fontSize: CGFloat, width: CGFloat) -> CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)
         let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.height)
     }
      /// 计算字符串高度
-    func jcHeightForComment(fontSize: CGFloat, width: CGFloat, maxHeight: CGFloat) -> CGFloat {
+    public func jcHeightForComment(fontSize: CGFloat, width: CGFloat, maxHeight: CGFloat) -> CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)
         
         let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(rect.height)>maxHeight ? maxHeight : ceil(rect.height)
     }
-    
-    /// 返回字数
-    var count: Int {
-        let string_NS = self as NSString
-        return string_NS.length
-    }
-    
+
     ///  使用正则表达式替换字符
-    func jcPregReplace(pattern: String, with: String,options: NSRegularExpression.Options = []) -> String {
+    public func jcPregReplace(pattern: String, with: String,options: NSRegularExpression.Options = []) -> String {
         let regex = try! NSRegularExpression(pattern: pattern, options: options)
         return regex.stringByReplacingMatches(in: self, options: [],
                                               range: NSMakeRange(0, self.count),
                                               withTemplate: with)
     }
     /// md5 加密
-    func md5() -> String {
+    public func md5() -> String {
         let cStr = self.cString(using: String.Encoding.utf8);
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
         CC_MD5(cStr!,(CC_LONG)(strlen(cStr!)), buffer)
@@ -69,7 +63,7 @@ extension String {
     }
     
     //MARK: - sha1 加密
-    func sha1() -> String {
+    public func sha1() -> String {
         //UnsafeRawPointer
         let data = self.data(using: String.Encoding.utf8)!
         var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))

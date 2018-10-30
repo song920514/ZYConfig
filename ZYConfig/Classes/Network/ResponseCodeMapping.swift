@@ -26,7 +26,6 @@ public enum InternalCode: Int, ResponseCodeProtocol {
     case requestMapping                 = 8010  //未能将端点映射到URL请求
     case encodableMapping               = 8011  //无法将可编码对象编码为数据
     case parameterEncoding              = 8012  //未能为URL请求编码参数
-    case systemUnderMaintenance         = 8013  //服务器维护中，请稍后重试，如有疑问请联系客服
 
     var codeString: String {
         switch self {
@@ -42,7 +41,6 @@ public enum InternalCode: Int, ResponseCodeProtocol {
         case .requestMapping:           return "未能将端点映射到URL请求"
         case .encodableMapping:         return "无法将可编码对象编码为数据"
         case .parameterEncoding:        return "未能为URL请求编码参数"
-        case .systemUnderMaintenance:   return "服务器维护中，请稍后重试，如有疑问请联系客服"
         }
     }
 }
