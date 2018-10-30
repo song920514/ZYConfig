@@ -1,0 +1,22 @@
+{
+  "name": "ZYConfig",
+  "version": "0.1.0",
+  "summary": "A short description of ZYConfig.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/song920514@163.com/ZYConfig",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "song920514@163.com": "song920514@163.com"
+  },
+  "source": {
+    "git": "https://github.com/song920514@163.com/ZYConfig.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ZYConfig/Classes/**/*"
+}

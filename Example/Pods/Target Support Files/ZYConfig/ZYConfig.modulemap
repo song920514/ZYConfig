@@ -1,0 +1,6 @@
+framework module ZYConfig {
+  umbrella header "ZYConfig-umbrella.h"
+
+  export *
+  module * { export * }
+}
