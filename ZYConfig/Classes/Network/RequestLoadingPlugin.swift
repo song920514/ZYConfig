@@ -9,7 +9,6 @@
 import Foundation
 import Moya
 import Result
-import PKHUD
 
 final class RequestLoadingPlugin: PluginType {
     
@@ -23,7 +22,7 @@ final class RequestLoadingPlugin: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
         //显示loading
         if isShowLoading {
-            HUD.show(HUDContentType.progress)
+//            HUD.show(HUDContentType.progress)
         }
     }
     
@@ -31,7 +30,7 @@ final class RequestLoadingPlugin: PluginType {
     func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         //隐藏loading
         if isShowLoading {
-            HUD.hide()
+//            HUD.hide()
         }
     }
 }

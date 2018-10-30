@@ -21,7 +21,7 @@ class JCNavigationController: UINavigationController, UIGestureRecognizerDelegat
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = JC_MAIN_COLOR
+//        navigationBar.barTintColor = JC_MAIN_COLOR
         navigationBar.barStyle = UIBarStyle.default
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [

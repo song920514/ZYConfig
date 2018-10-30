@@ -67,10 +67,6 @@ class JCBaseViewController: UIViewController {
     func jcEmpViewRefreshCompletion(_ completion: @escaping (_ btnTilte:String)->Void) -> Void {
         
         self.empView.jcRefreshAction = {
-            if $0 == "立即登录" {
-                self.present(JCLogInViewController(), animated: true, completion: nil)
-                return
-            }
             completion($0)
         }
     }

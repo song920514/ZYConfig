@@ -54,8 +54,8 @@ class NetworkService {
     /// - Parameters:
     ///   - target: 网络请求配置(遵守HttpConfigProtol协议的枚举值)
     ///   - isShow: true - 显示loading   false - 不显示loading
-    ///   - completionClosure: 网络请求完成后的回调
-    public class func request<T: JCTargetType & TargetType>(target: T, isShowLoading: Bool = false, successCompletion:@escaping JCRequstSuccessCompletion,failureCompletion:@escaping JCRequstFailureCompletion) {
+    ///   - completionClosure: 网络请求完成后的回调  request<T: JCTargetType & TargetType>
+    public class func request<T:TargetType>(target: T, isShowLoading: Bool = false, successCompletion:@escaping JCRequstSuccessCompletion,failureCompletion:@escaping JCRequstFailureCompletion) {
         
         //检查网络
         guard let manager = NetworkReachabilityManager() , manager.isReachable else {
@@ -97,7 +97,7 @@ class NetworkService {
     ///   - target: 接口请求配置
     ///   - json: json数据
     ///   - completionClosure: 请求完成的回调
-    fileprivate class func parsingResponse<T: JCTargetType & TargetType>(_ target: T, _ json: JSON, _ successCompletion:@escaping JCRequstSuccessCompletion,_ failureCompletion:@escaping JCRequstFailureCompletion) {
+    fileprivate class func parsingResponse<T:TargetType>(_ target: T, _ json: JSON, _ successCompletion:@escaping JCRequstSuccessCompletion,_ failureCompletion:@escaping JCRequstFailureCompletion) {
         guard json != JSON.null || json != JSON.null else {
             printFailure(path: target.path, paramDesc: String(describing: target), message: "JSON 数据为空！")
             failureCompletion(InternalCode.invalidJSON.rawValue, InternalCode.invalidJSON.codeString)

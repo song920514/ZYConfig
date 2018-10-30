@@ -30,8 +30,6 @@ class JCEmptyView: UIView {
     fileprivate var jcImgView = UIButton()
     fileprivate var jcTextLbl = UILabel()
     fileprivate var jcActionBtn = UIButton()
-    
-    
     private var refreshBtnTitle = "重新加载"
     
     /// 重新加载按钮事件
