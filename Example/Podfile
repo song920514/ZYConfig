@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZYConfig_Example' do
+  pod 'ZYConfig', :path => '../'
+
+  target 'ZYConfig_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
